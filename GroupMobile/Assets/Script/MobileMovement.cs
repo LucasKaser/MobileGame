@@ -7,8 +7,9 @@ public class MobileMovement : MonoBehaviour {
     public float Jumpspeed = 1.0f;
     public bool Grounded = false;
     private float moveDir = 0;
-	// Use this for initialization
-	void Start ()
+    private float moveDirY = 0;
+    // Use this for initialization
+    void Start ()
     {
 		
 	}
@@ -22,6 +23,7 @@ public class MobileMovement : MonoBehaviour {
     {
         Vector3 velocity = GetComponent<Rigidbody2D>().velocity;
         velocity.x = Movespeed * moveDir;
+        velocity.y = Movespeed * moveDirY;
         GetComponent<Rigidbody2D>().velocity = velocity;
     }
     public void MoveRight()
@@ -32,9 +34,21 @@ public class MobileMovement : MonoBehaviour {
     {
         moveDir = -1;
     }
+    public void MoveUp()
+    {
+        moveDirY = 1;
+    }
+    public void MoveDown()
+    {
+        moveDirY = -1;
+    }
     public void stop()
     {
         moveDir = 0;
+    }
+    public void stopY()
+    {
+        moveDirY = 0;
     }
     public void Jump()
     {
