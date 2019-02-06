@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyChase : MonoBehaviour {
     public GameObject player;
-    public AudioClip soundToPlay;
+   // public AudioClip soundToPlay;
     public float chaseSpeed = 3.0f;
     public float chaseTriggerDistance = 3.0f;
     public Vector3 paceDirection = new Vector3(0, 0, 0);
@@ -21,7 +21,7 @@ public class EnemyChase : MonoBehaviour {
     // Use this for initialization
     void Start () {
         startPosition = transform.position;
-        player = GameObject.FindGameObjectWithTag("player");
+        player = GameObject.FindGameObjectWithTag("Player");
 
 	}
 
@@ -39,7 +39,7 @@ public class EnemyChase : MonoBehaviour {
             GetComponent<Rigidbody2D>().velocity = chaseDirection * chaseSpeed;
             if (timer > fireSpeed)
             {
-                Camera.main.GetComponent<AudioSource>().PlayOneShot(soundToPlay);
+                //Camera.main.GetComponent<AudioSource>().PlayOneShot(soundToPlay);
                 timer = 0;
                 
                 playerPosition.z = 0;
