@@ -7,7 +7,7 @@ public class MediumEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (PlayerPrefs.GetInt("GameDifficulty") == 1 || PlayerPrefs.GetInt("GameDifficulty") == 3)
+        if (PlayerPrefs.GetInt("GameDifficulty") == 1)
         {
             gameObject.SetActive(false);
         }
