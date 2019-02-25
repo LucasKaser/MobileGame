@@ -30,15 +30,16 @@ public class PlayerAnimControlls : MonoBehaviour {
         {
             GetComponent<Animator>().SetBool("Idle", false);
         }
-        if(Input.GetButton("Fire1"))
-        {
-            GetComponent<Animator>().SetBool("Attack", true);
-        }
-        else
-        {
-            GetComponent<Animator>().SetBool("Attack", false);
+               /* if(Input.GetButton("Fire1"))
+                {
+                    GetComponent<Animator>().SetBool("Attack", true);
+                }
+                else
+                {
+                    GetComponent<Animator>().SetBool("Attack", false);
 
-        }
+                }*/
+        
         /*if (X != 0)
             {
                 GetComponent<Animator>().SetFloat("X", X);

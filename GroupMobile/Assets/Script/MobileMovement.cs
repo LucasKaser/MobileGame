@@ -8,6 +8,10 @@ public class MobileMovement : MonoBehaviour {
     public bool Grounded = false;
     private float moveDir = 0;
     private float moveDirY = 0;
+    bool stopR = false;
+    bool stopU = false;
+    bool stopD = false;
+    bool stopL = false;
     // Use this for initialization
     void Start ()
     {
@@ -18,7 +22,12 @@ public class MobileMovement : MonoBehaviour {
 	void Update ()
     {
         Move();
-	}
+        if (stopR == true && stopL == true && stopU == true && stopD == true)
+        {
+            gameObject.GetComponent<Animator>().SetBool("Idle", true);
+        }
+        
+    }
     private void Move()
     {
         Vector3 velocity = GetComponent<Rigidbody2D>().velocity;
@@ -29,26 +38,63 @@ public class MobileMovement : MonoBehaviour {
     public void MoveRight()
     {
         moveDir = 1;
+        gameObject.GetComponent<Animator>().SetFloat("X", 1);
+        gameObject.GetComponent<Animator>().SetFloat("Y", 0);
+        gameObject.GetComponent<Animator>().SetBool("Idle", false);
     }
     public void MoveLeft()
     {
         moveDir = -1;
+        gameObject.GetComponent<Animator>().SetFloat("X", -1);
+        gameObject.GetComponent<Animator>().SetFloat("Y", 0);
+        gameObject.GetComponent<Animator>().SetBool("Idle", false);
     }
     public void MoveUp()
     {
         moveDirY = 1;
+        gameObject.GetComponent<Animator>().SetFloat("Y", 1);
+        gameObject.GetComponent<Animator>().SetFloat("X", 0);
+        gameObject.GetComponent<Animator>().SetBool("Idle", false);
     }
     public void MoveDown()
     {
         moveDirY = -1;
+        gameObject.GetComponent<Animator>().SetFloat("Y", -1);
+        gameObject.GetComponent<Animator>().SetFloat("X", 0);
+        gameObject.GetComponent<Animator>().SetBool("Idle", false);
     }
-    public void stop()
+    public void stopUp()
     {
+        stopU = true;
         moveDir = 0;
+        gameObject.GetComponent<Animator>().SetFloat("X", 0);
+        gameObject.GetComponent<Animator>().SetFloat("Y", 0);
+       // gameObject.GetComponent<Animator>().SetBool("Idle", true);
+
     }
-    public void stopY()
+    public void stopDown()
     {
+        stopD = true;
         moveDirY = 0;
+        gameObject.GetComponent<Animator>().SetFloat("X", 0);
+        gameObject.GetComponent<Animator>().SetFloat("Y", 0);
+      //  gameObject.GetComponent<Animator>().SetBool("Idle", true);
+    }
+    public void stopLeft()
+    {
+        stopL = true;
+        moveDir = 0;
+        gameObject.GetComponent<Animator>().SetFloat("X", 0);
+        gameObject.GetComponent<Animator>().SetFloat("Y", 0);
+       // gameObject.GetComponent<Animator>().SetBool("Idle", true);
+    }
+    public void stopRight()
+    {
+        stopR = true;
+        moveDir = 0;
+        gameObject.GetComponent<Animator>().SetFloat("X", 0);
+        gameObject.GetComponent<Animator>().SetFloat("Y", 0);
+       // gameObject.GetComponent<Animator>().SetBool("Idle", true);
     }
     public void Jump()
     {

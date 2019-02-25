@@ -51,6 +51,12 @@ public class Melee: MonoBehaviour {
             MeleeHitbox.GetComponent<Rigidbody2D>().velocity = hitDir.normalized * sliceSpeed;
             Destroy(MeleeHitbox, HitTime);
             timer = 0;
+            GetComponent<Animator>().SetBool("Attack", true);
         }
+
+    }
+    public void AttackEnd()
+    {
+        GetComponent<Animator>().SetBool("Attack", false);
     }
 }
