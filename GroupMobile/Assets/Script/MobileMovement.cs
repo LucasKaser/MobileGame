@@ -26,18 +26,18 @@ public class MobileMovement : MonoBehaviour {
         Move();
         if (stopR == true && stopL == true && stopU == true && stopD == true)
         {
-            gameObject.GetComponent<Animator>().SetBool("Idle", true);
+            //gameObject.GetComponent<Animator>().SetBool("Idle", true);
         }
         
     }
     private void Move()
     {
         Vector3 velocity = GetComponent<Rigidbody2D>().velocity;
-        if (Movespeed * moveDirL > Movespeed * moveDirR)
+        if (Movespeed * moveDirL < 0 && Movespeed * moveDirR == 0)
         {
             velocity.x = Movespeed * moveDirL;
         }
-        else if (Movespeed * moveDirR > Movespeed * moveDirL)
+        else if (Movespeed * moveDirR > 0 && Movespeed * moveDirL == 0)
         {
             velocity.x = Movespeed * moveDirR;
         }
@@ -45,13 +45,13 @@ public class MobileMovement : MonoBehaviour {
         {
             velocity.x = 0;
         }
-        if (Movespeed * moveDirU > Movespeed * moveDirD)
+        if (Movespeed * moveDirU > 0 && Movespeed * moveDirD == 0)
         {
-            velocity.y = Movespeed * moveDirL;
+            velocity.y = Movespeed * moveDirU;
         }
-        else if (Movespeed * moveDirD > Movespeed * moveDirU)
+        else if (Movespeed * moveDirD < 0 && Movespeed * moveDirU == 0)
         {
-            velocity.y = Movespeed * moveDirR;
+            velocity.y = Movespeed * moveDirD;
         }
         else if (Movespeed * moveDirD == 0 && Movespeed * moveDirU == 0)
         {
