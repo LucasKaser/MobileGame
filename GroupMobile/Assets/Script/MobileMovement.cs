@@ -26,7 +26,7 @@ public class MobileMovement : MonoBehaviour {
         Move();
         if (stopR == true && stopL == true && stopU == true && stopD == true)
         {
-            //gameObject.GetComponent<Animator>().SetBool("Idle", true);
+            gameObject.GetComponent<Animator>().SetBool("Idle", true);
         }
         
     }
@@ -65,6 +65,7 @@ public class MobileMovement : MonoBehaviour {
     }
     public void MoveRight()
     {
+        stopR = false;
         moveDirR = 1;
         gameObject.GetComponent<Animator>().SetFloat("X", 1);
         gameObject.GetComponent<Animator>().SetFloat("Y", 0);
@@ -73,6 +74,7 @@ public class MobileMovement : MonoBehaviour {
     }
     public void MoveLeft()
     {
+        stopL = false;
         moveDirL = -1;
         gameObject.GetComponent<Animator>().SetFloat("X", -1);
         gameObject.GetComponent<Animator>().SetFloat("Y", 0);
@@ -82,6 +84,7 @@ public class MobileMovement : MonoBehaviour {
     public void MoveUp()
     {
         moveDirU = 1;
+        stopU = false;
         gameObject.GetComponent<Animator>().SetFloat("Y", 1);
         gameObject.GetComponent<Animator>().SetFloat("X", 0);
         gameObject.GetComponent<Animator>().SetBool("Idle", false);
@@ -90,6 +93,7 @@ public class MobileMovement : MonoBehaviour {
     public void MoveDown()
     {
         moveDirD = -1;
+        stopD = false;
         gameObject.GetComponent<Animator>().SetFloat("Y", -1);
         gameObject.GetComponent<Animator>().SetFloat("X", 0);
         gameObject.GetComponent<Animator>().SetBool("Idle", false);
