@@ -1096,7 +1096,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HitTime: 0.05
   sliceSpeed: 30
-  fireSpeed: 0.55
+  fireSpeed: 0.3
   prefab: {fileID: 6358464218269625566, guid: 9e4ea1e1ba34fcb4bbfcf1c305aac6d2, type: 3}
 --- !u!50 &887515117
 Rigidbody2D:
@@ -1154,7 +1154,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8137684054370336914}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a7b712f68fbadd419f3ce715475375d, type: 3}
   m_Name: 
