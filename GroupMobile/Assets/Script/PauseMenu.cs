@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour {
     public float Tm = 1.0f;
+    public GameObject Pause;
     // Use this for initialization
     void Start() {
         Time.timeScale = Tm;
@@ -22,7 +23,7 @@ public class PauseMenu : MonoBehaviour {
             else 
             {
                 //Show Menu Buttons, Pause game
-                GetComponent<Canvas>().enabled = true;
+                Pause.SetActive(true);
                 Time.timeScale = 0;
             }
 
@@ -30,8 +31,14 @@ public class PauseMenu : MonoBehaviour {
     }
     public void Resume()
     {
-        GetComponent<Canvas>().enabled = false;
+        Pause.SetActive(false);
         Time.timeScale = Tm;
 
+    }
+    public void PauseGame()
+    {
+        //Show Menu Buttons, Pause game
+        Pause.SetActive(true);
+        Time.timeScale = 0;
     }
 }
