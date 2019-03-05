@@ -5,27 +5,27 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class BossHP : MonoBehaviour
 {
-    public GameObject Door;
+    //public GameObject Door;
     public int health = 500;
 
-    public Slider HealthSlider;
+   // public Slider HealthSlider;
     
     void Start()
     {
-        HealthSlider.GetComponent<Slider>().value = health;
+       // HealthSlider.GetComponent<Slider>().value = health;
         
     }
         void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "bullet")
+        if (collision.gameObject.tag == "PlayerAttack")
         {
-            health--;
-            HealthSlider.GetComponent<Slider>().value = health;
+            health -= 20;
+        //    HealthSlider.GetComponent<Slider>().value = health;
         }
         if (health <= 0)
         {
             gameObject.SetActive(false);
-            Door.SetActive(false);
+           // Door.SetActive(false);
         }
     }
 }
