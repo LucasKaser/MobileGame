@@ -17,7 +17,8 @@ public class Melee: MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         timer += Time.deltaTime;
-         
+        
+
         /*if (Input.GetButton("Fire1") && timer > fireSpeed)
         {
             timer = 0;
@@ -35,7 +36,7 @@ public class Melee: MonoBehaviour {
            // Camera.main.GetComponent<AudioSource>().PlayOneShot(soundToPlay);
 
         }*/
-	}
+    }
     public void Attack()
     {
         if (timer > fireSpeed)
