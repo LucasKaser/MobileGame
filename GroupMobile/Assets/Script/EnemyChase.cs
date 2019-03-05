@@ -37,7 +37,7 @@ public class EnemyChase : MonoBehaviour {
             home = false;
             chaseDirection.Normalize();
             GetComponent<Rigidbody2D>().velocity = chaseDirection * chaseSpeed;
-            if (timer > fireSpeed)
+            /*if (timer > fireSpeed)
             {
                 //Camera.main.GetComponent<AudioSource>().PlayOneShot(soundToPlay);
                 timer = 0;
@@ -49,10 +49,10 @@ public class EnemyChase : MonoBehaviour {
                 shootDir.Normalize();
                 shootDir *= bulletSpeed;
                 //destination - start pos.
-                GameObject bullet = (GameObject)Instantiate(prefab, transform.position, Quaternion.identity);
-                bullet.GetComponent<Rigidbody2D>().velocity = shootDir.normalized * bulletSpeed;
-                Destroy(bullet, bulletLife);
-            }
+               // GameObject bullet = (GameObject)Instantiate(prefab, transform.position, Quaternion.identity);
+               // bullet.GetComponent<Rigidbody2D>().velocity = shootDir.normalized * bulletSpeed;
+                //Destroy(bullet, bulletLife);
+            }*/
 
         }
         else if (home == false)
