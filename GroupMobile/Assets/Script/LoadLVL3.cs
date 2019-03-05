@@ -11,6 +11,7 @@ public class LoadLVL3 : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             // attach to the object ending the game, not the player
+            Time.timeScale = 1;
             SceneManager.LoadScene("Level3");
         }
 

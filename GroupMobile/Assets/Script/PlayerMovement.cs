@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
     public float moveSpeed = 3.0f;
-    bool stopR = false;
-    bool stopU = false;
-    bool stopD = false;
-    bool stopL = false;
+    bool stopR = true;
+    bool stopU = true;
+    bool stopD = true;
+    bool stopL = true;
     // Use this for initialization
     void Start () {
         if (PlayerPrefs.GetInt("Controls") == 2)

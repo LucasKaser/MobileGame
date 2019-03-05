@@ -95,8 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 256b8e3259327674596172fb3cb4594c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
-  soundToPlay: {fileID: 0}
+  health: 2
 --- !u!114 &3167733284544722995
 MonoBehaviour:
   m_ObjectHideFlags: 0

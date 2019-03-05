@@ -28,6 +28,7 @@ public class BossHP : MonoBehaviour
             gameObject.SetActive(false);
             // Door.SetActive(false);
             // SceneManager.LoadScene("Win");
+            Time.timeScale = 0;
             Victory.SetActive(true);
         }
     }

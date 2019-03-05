@@ -10,10 +10,10 @@ public class MobileMovement : MonoBehaviour {
     private float moveDirU = 0;
     private float moveDirR = 0;
     private float moveDirD = 0;
-    bool stopR = false;
-    bool stopU = false;
-    bool stopD = false;
-    bool stopL = false;
+    bool stopR = true;
+    bool stopU = true;
+    bool stopD = true;
+    bool stopL = true;
     // Use this for initialization
     void Start ()
     {
@@ -26,11 +26,15 @@ public class MobileMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        Move();
         if (stopR == true && stopL == true && stopU == true && stopD == true)
         {
             gameObject.GetComponent<Animator>().SetBool("Idle", true);
         }
+        Move();
+        /*if (stopR == true && stopL == true && stopU == true && stopD == true)
+        {
+            gameObject.GetComponent<Animator>().SetBool("Idle", true);
+        }*/
         
     }
     private void Move()

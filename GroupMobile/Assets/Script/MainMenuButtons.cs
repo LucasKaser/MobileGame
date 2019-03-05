@@ -4,8 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenuButtons : MonoBehaviour {
+    private void Start()
+    {
+        Time.timeScale = 1;
+    }
 
-	public void NewGame()
+    public void NewGame()
     {
         SceneManager.LoadScene("Level1");
     }
@@ -32,5 +36,9 @@ public class MainMenuButtons : MonoBehaviour {
     public void Touch()
     {
         PlayerPrefs.SetInt("Controls", 2);
+    }
+    public void Respawn()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
