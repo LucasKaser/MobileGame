@@ -11,8 +11,11 @@ public class PlayerMovement : MonoBehaviour {
     bool stopL = false;
     // Use this for initialization
     void Start () {
-		
-	}
+        if (PlayerPrefs.GetInt("Controls") == 2)
+        {
+            this.enabled = false;
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {

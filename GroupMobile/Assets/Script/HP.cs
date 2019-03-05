@@ -26,7 +26,7 @@ public class HP : MonoBehaviour {
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy" && timer > 1.0)
+        if (collision.gameObject.tag == "Enemy"  && timer > 1.0 || collision.gameObject.tag == "EnemyAttack" && timer > 1.0)
         {
             timer = 0;
             health -= 1;
@@ -45,7 +45,7 @@ public class HP : MonoBehaviour {
 
     void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy" && timer > 1.0)
+        if (collision.gameObject.tag == "Enemy" && timer > 1.0 || collision.gameObject.tag == "EnemyAttack" && timer > 1.0)
         {
             timer = 0;
             health -= 1;

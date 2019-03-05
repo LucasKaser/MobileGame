@@ -17,7 +17,10 @@ public class MobileMovement : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-		
+		if(PlayerPrefs.GetInt("Controls") == 1)
+        {
+            this.enabled = false;
+        }
 	}
 	
 	// Update is called once per frame

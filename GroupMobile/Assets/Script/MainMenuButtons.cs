@@ -25,4 +25,12 @@ public class MainMenuButtons : MonoBehaviour {
     {
         PlayerPrefs.SetInt("GameDifficulty", 1);
     }
+    public void Keyboard()
+    {
+        PlayerPrefs.SetInt("Controls", 1);
+    }
+    public void Touch()
+    {
+        PlayerPrefs.SetInt("Controls", 2);
+    }
 }
