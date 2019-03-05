@@ -7,7 +7,8 @@ public class BossHP : MonoBehaviour
 {
     //public GameObject Door;
     public int health = 500;
-
+    public GameObject Victory;
+    
    // public Slider HealthSlider;
     
     void Start()
@@ -25,7 +26,9 @@ public class BossHP : MonoBehaviour
         if (health <= 0)
         {
             gameObject.SetActive(false);
-           // Door.SetActive(false);
+            // Door.SetActive(false);
+            // SceneManager.LoadScene("Win");
+            Victory.SetActive(true);
         }
     }
 }
